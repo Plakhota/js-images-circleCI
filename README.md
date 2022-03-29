@@ -19,4 +19,4 @@ More about the Eyes Images SDK:
   
   
  
-merge-from
+merge-from. 
