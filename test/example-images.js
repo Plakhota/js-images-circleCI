@@ -1,6 +1,6 @@
 'use strict'
 
-const {Eyes, Target, Configuration, BatchInfo} = require('@applitools/eyes-images')
+const {Eyes, Target, Configuration, BatchInfo, FileLogHandler} = require('@applitools/eyes-images')
 const fetch = require('node-fetch')
 const path = require('path')
 
@@ -19,6 +19,8 @@ describe('Eyes-Images', () => {
         // Set new batch
         configuration.setBatch(new BatchInfo('Demo batch'));
         configuration.setDontCloseBatches(true);
+        
+        configuration.setLogHandler(new FileLogHandler(true, './MY_LOG.LOG', true));
 
 
         // Set the configuration to eyes
