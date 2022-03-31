@@ -24,7 +24,9 @@ describe('Eyes-Images', () => {
 
         // Set the configuration to eyes
         eyes.setConfiguration(configuration);
-        eyes.setLogHandler(new FileLogHandler(true, './MY_LOG.LOG', true));
+        //eyes.setLogHandler(new FileLogHandler(true, './MY_LOG.LOG', true));
+        conf.setLogHandler(new ConsoleLogHandler(true));
+
 
     })
 
