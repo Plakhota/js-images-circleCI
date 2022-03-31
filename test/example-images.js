@@ -1,6 +1,6 @@
 'use strict'
 
-const {Eyes, Target, Configuration, BatchInfo, FileLogHandler} = require('@applitools/eyes-images')
+const {Eyes, Target, Configuration, BatchInfo, FileLogHandler, ConsoleLogHandler} = require('@applitools/eyes-images')
 const fetch = require('node-fetch')
 const path = require('path')
 
@@ -25,7 +25,7 @@ describe('Eyes-Images', () => {
         // Set the configuration to eyes
         eyes.setConfiguration(configuration);
         //eyes.setLogHandler(new FileLogHandler(true, './MY_LOG.LOG', true));
-        conf.setLogHandler(new ConsoleLogHandler(true));
+        eyes.setLogHandler(new ConsoleLogHandler(true));
 
 
     })
