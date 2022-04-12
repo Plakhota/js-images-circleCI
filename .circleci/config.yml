@@ -21,6 +21,7 @@ jobs:
             if [[ -z "${CIRCLE_PULL_REQUEST}" ]]; then
               echo "Not a PR, add an APPLITOOLS_BRANCH_NAME"
               export APPLITOOLS_BRANCH_NAME="Plakhota/js-images-circleCI/"$CIRCLE_BRANCH
+              # if it is PR, the curl will do noting so it is safe to not use if-else
               curl -v -L -d '' -X POST "eyesapi.applitools.com/api/externals/github/push?apiKey=$APPLITOOLS_API_KEY&CommitSha=$CIRCLE_SHA1&BranchName=$APPLITOOLS_BRANCH_NAME"
 
             else
