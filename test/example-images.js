@@ -37,10 +37,11 @@ describe('Eyes-Images', () => {
 
         await eyes.check('base 64 string', Target.image(imageBuffer.toString('base64')));
 
-        await eyes.close();
+        setTimeout(eyes.close(), 30000);
     })
     
     afterEach(async () => {
-        await eyes.abortIfNotClosed();
+       console.log("nothing afterEach");
+       // await eyes.abortIfNotClosed();
     })
 })
