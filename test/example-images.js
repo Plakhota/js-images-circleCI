@@ -36,11 +36,11 @@ describe('Eyes-Images', () => {
         await eyes.check('file path', Target.image(path.resolve(__dirname, 'applitools.png')))
 
         await eyes.check('base 64 string', Target.image(imageBuffer.toString('base64')))
-
-        await eyes.close()
+        //comment out close and abort to try make PR SCM check hang
+      //  await eyes.close()
     })
     
     afterEach(async () => {
-        await eyes.abortIfNotClosed();
+       // await eyes.abortIfNotClosed();
     })
 })
