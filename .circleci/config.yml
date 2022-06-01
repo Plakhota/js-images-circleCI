@@ -29,7 +29,6 @@ jobs:
             export APPLITOOLS_BRANCH_NAME=$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH
             curl -v -L -d '' -X POST "eyesapi.applitools.com/api/externals/github/push?apiKey=$APPLITOOLS_API_KEY&CommitSha=$CIRCLE_SHA1&BranchName=$APPLITOOLS_BRANCH_NAME"
             APPLITOOLS_DONT_CLOSE_BATCHES=true npm test        
-       - run:
+      - run:
           name: Close GH batch
           command: curl -X POST -d -H "accept:*/*" https://eyesapi.applitools.com/api/externals/github/servers/github.com/commit/${CIRCLE_SHA1}/complete?apiKey=${APPLITOOLS_API_KEY}
-            
