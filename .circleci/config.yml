@@ -11,7 +11,7 @@ jobs:
       - run:
           command: npm install
       - run:
-          name: Prepare for commit push - Temporarily not needed; only want integration on PR
+          name: Prepare for commit push - Temporarily not needed; only want integration on  PR
           command: |
             echo $APPLITOOLS_API_KEY
             echo $CIRCLE_BRANCH
