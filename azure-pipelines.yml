@@ -8,9 +8,7 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-  
-variables:
-  APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
+
 
 
 steps:
@@ -20,7 +18,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo APPLITOOLS_API_KEY=${APPLITOOLS_API_KEY}
+    echo APPLITOOLS_API_KEY=$(APPLITOOLS_API_KEY)
     npm install
     npm test
     #npm run build
