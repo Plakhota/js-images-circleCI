@@ -18,8 +18,9 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo $(secrets.APPLITOOLS_API_KEY)
     npm install
     npm test
     #npm run build
+  env:
+    APPLITOOLS_API_KEY: ${{ parameters.APPLITOOLS_API_KEY }} 
   displayName: 'npm install and build'
