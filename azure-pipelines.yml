@@ -8,6 +8,10 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+  APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
+
 
 steps:
 - task: NodeTool@0
