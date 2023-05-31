@@ -18,7 +18,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo APPLITOOLS_API_KEY=$(APPLITOOLS_API_KEY)
+    echo APPLITOOLS_API_KEY=$(secrets.APPLITOOLS_API_KEY)
     npm install
     npm test
     #npm run build
