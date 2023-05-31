@@ -18,6 +18,11 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+  
+- task: ApplitoolsBuildTask@0
+  displayName: 'Applitools Build Task'
+  inputs:
+    eyesBaseUrl: "https://eyes.applitools.com"
 
 - script: |
     npm install
