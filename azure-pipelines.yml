@@ -24,7 +24,7 @@ steps:
   inputs:
     eyesBaseUrl: "https://eyes.applitools.com"
   env:
-    APPLITOOLS_API_KEY: $(APPLITOOLS_BATCH_ID)
+    APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
 
 - script: |
     npm install
@@ -32,4 +32,4 @@ steps:
     #npm run build
   displayName: 'npm install and build'
   env:
-    APPLITOOLS_API_KEY: $(APPLITOOLS_BATCH_ID)
+    APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
