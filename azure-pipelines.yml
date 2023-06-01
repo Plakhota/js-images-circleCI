@@ -25,6 +25,8 @@ steps:
     eyesBaseUrl: "https://eyes.applitools.com"
   env:
     APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
+    APPLITOOLS_BATCH_ID: 12345
+
 
 - script: |
     npm install
