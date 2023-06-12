@@ -9,6 +9,7 @@ describe('Eyes-Images', () => {
 
     beforeEach(() => {
         eyes = new Eyes();
+        console.log("Before Each");
 
         // Initialize the eyes configuration
         const configuration = new Configuration();
@@ -41,6 +42,7 @@ describe('Eyes-Images', () => {
     })
     
     afterEach(async () => {
+        console.log("After Each");
         await eyes.abortIfNotClosed();
     })
 })
