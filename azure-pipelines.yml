@@ -19,10 +19,10 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
   
-- task: ApplitoolsBuildTask@0
-  displayName: 'Applitools Build Task'
-  inputs:
-    eyesBaseUrl: "https://eyes.applitools.com"
+# - task: ApplitoolsBuildTask@0
+#   displayName: 'Applitools Build Task'
+#   inputs:
+#     eyesBaseUrl: "https://eyes.applitools.com"
  
 
 - script: |
@@ -32,4 +32,4 @@ steps:
   displayName: 'npm install and build '
   env:
     APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
-    APPLITOOLS_BATCH_ID: $(Build.SourceVersion)
+    APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
