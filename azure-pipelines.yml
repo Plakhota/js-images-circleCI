@@ -19,17 +19,17 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
   
-- task: ApplitoolsBuildTask@0
-  displayName: 'Applitools Build Task'
-  inputs:
-    eyesBaseUrl: "https://eyes.applitools.com"
-  env:
-    APPLITOOLS_SERVER_URL: "https://eyes.applitools.com"
+# - task: ApplitoolsBuildTask@0
+#   displayName: 'Applitools Build Task'
+#   inputs:
+#     eyesBaseUrl: "https://eyes.applitools.com"
+#   env:
+#     APPLITOOLS_SERVER_URL: "https://eyes.applitools.com"
  
 
 - script: |
     npm install
-    npm test
+    APPLITOOLS_SHOW_LOGS=true npm test
     #npm run build
   displayName: 'npm install and build '
   env:
