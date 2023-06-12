@@ -32,4 +32,4 @@ steps:
   displayName: 'npm install and build '
   env:
     APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
-    APPLITOOLS_BATCH_ID: $(commitSha)
+    APPLITOOLS_BATCH_ID: $(Build.SourceVersion)
