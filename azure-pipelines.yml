@@ -33,5 +33,5 @@ steps:
     #npm run build
   displayName: 'npm install and build '
   env:
-    APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
+    APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
