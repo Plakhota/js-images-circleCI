@@ -23,13 +23,12 @@ steps:
   displayName: 'Applitools Build Task'
   inputs:
     eyesBaseUrl: "https://eyes.applitools.com"
-    eyesBatchId: 1234
  
 
 - script: |
     npm install
     npm test
     #npm run build
-  displayName: 'npm install and build'
+  displayName: 'npm install and build '
   env:
     APPLITOOLS_API_KEY: $(APPLITOOLS_API_KEY)
