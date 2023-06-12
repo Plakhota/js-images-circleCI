@@ -27,34 +27,34 @@ steps:
     APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
  
 
-- script: |
-    export ADO_BATCH_ID=$APPLITOOLS_BATCH_ID  
-    export APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID_FOR_GH
-    curl --location 'https://testeyes.applitools.com/api/sessions/batches/bindpointers/$APPLITOOLS_BATCH_ID?apiKey=$APPLITOOLS_API_KEY' --header 'Content-Type: application/json' --data '{ "secondaryBatchPointerId": "$ADO_BATCH_ID"}'
-    npm install
-    APPLITOOLS_SHOW_LOGS=true npm test
-    #npm run build
-  displayName: 'npm install and build '
-  env:
-    APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
-    # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
-    APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
-
-
 # - script: |
 #     export ADO_BATCH_ID=$APPLITOOLS_BATCH_ID  
 #     export APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID_FOR_GH
-#     echo ADO_BATCH_ID=$ADO_BATCH_ID
-#     echo APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID
 #     curl --location 'https://testeyes.applitools.com/api/sessions/batches/bindpointers/$APPLITOOLS_BATCH_ID?apiKey=$APPLITOOLS_API_KEY' --header 'Content-Type: application/json' --data '{ "secondaryBatchPointerId": "$ADO_BATCH_ID"}'
 #     npm install
 #     APPLITOOLS_SHOW_LOGS=true npm test
 #     #npm run build
-#   displayName: 'npm install and build'
+#   displayName: 'npm install and build '
 #   env:
 #     APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
 #     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
 #     APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
-#     APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
+
+
+- script: |
+    export ADO_BATCH_ID=$APPLITOOLS_BATCH_ID  
+    export APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID_FOR_GH
+    echo ADO_BATCH_ID=$ADO_BATCH_ID
+    echo APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID
+    curl --location 'https://testeyes.applitools.com/api/sessions/batches/bindpointers/$APPLITOOLS_BATCH_ID?apiKey=$APPLITOOLS_API_KEY' --header 'Content-Type: application/json' --data '{ "secondaryBatchPointerId": "$ADO_BATCH_ID"}'
+    npm install
+    APPLITOOLS_SHOW_LOGS=true npm test
+    #npm run build
+  displayName: 'npm install and build'
+  env:
+    APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
+    # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
+    APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
+    APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
 
 
