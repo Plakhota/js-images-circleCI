@@ -56,7 +56,7 @@ steps:
     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
     APPLITOOLS_SERVER_URL: "https://testeyesAPI.applitools.com"
     # APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
-    APPLITOOLS_BATCH_ID_FOR_GH: $(commitSha)
+    APPLITOOLS_BATCH_ID_FOR_GH: $(SYSTEM_PULLREQUEST_SOURCECOMMITID)
 
 
 
