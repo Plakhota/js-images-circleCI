@@ -22,9 +22,9 @@ steps:
 - task: ApplitoolsBuildTask@0
   displayName: 'Applitools Build Task'
   inputs:
-    eyesBaseUrl: "https://testeyesapi.applitools.com"
+    eyesBaseUrl: "https://testeyes.applitools.com"
   env:
-    APPLITOOLS_SERVER_URL: "https://testeyesapi.applitools.com"
+    APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
  
 
 # - script: |
@@ -39,6 +39,20 @@ steps:
 #     APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
 #     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
 #     APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
+
+# - script: |
+#     npm install
+#      APPLITOOLS_SHOW_LOGS=true npm test
+#     #npm run build
+#   displayName: 'npm install and build'
+#   env:
+#     APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
+#     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
+#     APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
+#     # APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
+#     APPLITOOLS_BATCH_ID_FOR_GH: $(System.PullRequest.SourceCommitId)
+
+
 
 
 - script: |
@@ -56,7 +70,7 @@ steps:
   env:
     APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
-    APPLITOOLS_SERVER_URL: "https://testeyesAPI.applitools.com"
+    APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
     # APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
     APPLITOOLS_BATCH_ID_FOR_GH: $(System.PullRequest.SourceCommitId)
 
