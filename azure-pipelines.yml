@@ -56,7 +56,7 @@ steps:
 
 
 - script: |
-    echo "ENV vars list "
+    echo "ENV vars list"
     env
     export ADO_BATCH_ID=$APPLITOOLS_BATCH_ID  
     export APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID_FOR_GH
