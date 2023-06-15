@@ -22,9 +22,9 @@ steps:
 - task: ApplitoolsBuildTask@0
   displayName: 'Applitools Build Task'
   inputs:
-    eyesBaseUrl: "https://testeyes.applitools.com"
+    eyesBaseUrl: "https://testeyesapi.applitools.com"
   env:
-    APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
+    APPLITOOLS_SERVER_URL: "https://testeyesapi.applitools.com"
  
 
 # - script: |
@@ -54,9 +54,9 @@ steps:
   env:
     APPLITOOLS_API_KEY: $(_testeyes_applitools_api_key)
     # APPLITOOLS_BATCH_ID: $(System.PullRequest.SourceCommitId)
-    APPLITOOLS_SERVER_URL: "https://testeyes.applitools.com"
-    APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
-    # APPLITOOLS_BATCH_ID_FOR_GH: $(commitSha)
+    APPLITOOLS_SERVER_URL: "https://testeyesAPI.applitools.com"
+    # APPLITOOLS_BATCH_ID_FOR_GH: $(azure-pipelines-System.PullRequest.SourceCommitId)
+    APPLITOOLS_BATCH_ID_FOR_GH: $(commitSha)
 
 
 
