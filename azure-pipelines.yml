@@ -42,7 +42,7 @@ steps:
 
 
 - script: |
-    echo "ENV vars list"
+    echo "ENV vars list "
     env
     echo ADO_BATCH_ID=$APPLITOOLS_BATCH_ID  
     echo APPLITOOLS_BATCH_ID=$APPLITOOLS_BATCH_ID_FOR_GH
